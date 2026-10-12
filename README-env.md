@@ -472,6 +472,7 @@ README.md               项目首页：世界、分工、项目结构、设计�
 README-env.md           七个程序的用法手册（本文）
 shrdlu.ini              参数默认值（带注释，命令行按需覆盖）
 pyproject.toml          打包与入口点（七个命令）
+LICENSE                 MIT 许可证文本
 tests/                  验收套件（每个阶段一个）
 tools/check.sh          提交前的完整检查
 docs/                   设计文档（公开部分）
