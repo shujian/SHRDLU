@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Test / tooling artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Generated match output
+runs/
+out/
+.tools/
+
+# 打包产物
+build/
+dist/
+*.egg-info/

@@ -1,0 +1,280 @@
+{
+  "name": "first-version",
+  "description": "第一条场景：沿用原版 SHRDLU 开场（小绿块叠在大红块上）。见 docs/设计协议.md §7。",
+  "state": {
+    "objects": [
+      {
+        "id": "a",
+        "kind": "cube",
+        "color": "green",
+        "size": "small",
+        "pos": [
+          "on",
+          "b"
+        ]
+      },
+      {
+        "id": "b",
+        "kind": "cube",
+        "color": "red",
+        "size": "big",
+        "pos": [
+          "table"
+        ]
+      },
+      {
+        "id": "c",
+        "kind": "cube",
+        "color": "blue",
+        "size": "big",
+        "pos": [
+          "table"
+        ]
+      },
+      {
+        "id": "d",
+        "kind": "pyramid",
+        "color": "blue",
+        "size": "big",
+        "pos": [
+          "table"
+        ]
+      },
+      {
+        "id": "e",
+        "kind": "ball",
+        "color": "yellow",
+        "size": "small",
+        "pos": [
+          "table"
+        ]
+      }
+    ]
+  },
+  "instructions": [
+    {
+      "op": "pick_up",
+      "args": [
+        "d"
+      ],
+      "legal": true,
+      "reason_contains": "",
+      "text": "Pick up the blue pyramid."
+    },
+    {
+      "op": "put_on",
+      "args": [
+        "d",
+        "c"
+      ],
+      "legal": true,
+      "reason_contains": "",
+      "text": "Put the blue pyramid on the blue cube."
+    },
+    {
+      "op": "pick_up",
+      "args": [
+        "b"
+      ],
+      "legal": false,
+      "reason_contains": "not clear",
+      "text": "Pick up the red cube."
+    },
+    {
+      "op": "put_on",
+      "args": [
+        "e",
+        "a"
+      ],
+      "legal": true,
+      "reason_contains": "",
+      "text": "Put the yellow ball on the green cube."
+    }
+  ],
+  "questions": [
+    {
+      "type": "rel",
+      "desc": {
+        "quant": "the",
+        "color": "blue",
+        "kind": "pyramid"
+      },
+      "rel": {
+        "name": "on",
+        "target": {
+          "quant": "the",
+          "color": "blue",
+          "kind": "cube"
+        }
+      },
+      "text": "Is the blue pyramid on the blue cube?",
+      "answer": "yes"
+    },
+    {
+      "type": "rel",
+      "desc": {
+        "quant": "the",
+        "color": "green",
+        "kind": "cube"
+      },
+      "rel": {
+        "name": "clear"
+      },
+      "text": "Is the green cube clear?",
+      "answer": "no"
+    },
+    {
+      "type": "rel",
+      "desc": {
+        "quant": "the",
+        "color": "yellow",
+        "kind": "ball"
+      },
+      "rel": {
+        "name": "on",
+        "target": {
+          "quant": "the",
+          "color": "green",
+          "kind": "cube"
+        }
+      },
+      "text": "Is the yellow ball on the green cube?",
+      "answer": "yes"
+    },
+    {
+      "type": "rel",
+      "desc": {
+        "quant": "the",
+        "kind": "pyramid"
+      },
+      "rel": {
+        "name": "supported"
+      },
+      "text": "Is the pyramid supported?",
+      "answer": "yes"
+    },
+    {
+      "type": "count",
+      "desc": {
+        "quant": "the",
+        "kind": "ball"
+      },
+      "rel": {
+        "name": "on_table"
+      },
+      "text": "How many balls are on the table?",
+      "answer": "0"
+    },
+    {
+      "type": "attr",
+      "desc": {
+        "quant": "the",
+        "color": "blue",
+        "kind": "pyramid"
+      },
+      "attr": "color",
+      "text": "What color is the blue pyramid?",
+      "answer": "blue"
+    },
+    {
+      "type": "attr",
+      "desc": {
+        "quant": "the",
+        "color": "green",
+        "kind": "cube"
+      },
+      "attr": "size",
+      "text": "How big is the green cube?",
+      "answer": "small"
+    },
+    {
+      "type": "attr",
+      "desc": {
+        "quant": "the",
+        "color": "yellow",
+        "kind": "ball"
+      },
+      "attr": "kind",
+      "text": "What shape is the yellow ball?",
+      "answer": "ball"
+    },
+    {
+      "type": "all",
+      "desc": {
+        "quant": "the",
+        "kind": "cube"
+      },
+      "rel": {
+        "name": "on_table"
+      },
+      "text": "Are all cubes on the table?",
+      "answer": "no"
+    },
+    {
+      "type": "exists",
+      "desc": {
+        "quant": "the",
+        "color": "red",
+        "kind": "cube"
+      },
+      "rel": {
+        "name": "on_table"
+      },
+      "text": "Is there a red cube on the table?",
+      "answer": "yes"
+    }
+  ],
+  "expected_final_state": {
+    "objects": [
+      {
+        "id": "a",
+        "kind": "cube",
+        "color": "green",
+        "size": "small",
+        "pos": [
+          "on",
+          "b"
+        ]
+      },
+      {
+        "id": "b",
+        "kind": "cube",
+        "color": "red",
+        "size": "big",
+        "pos": [
+          "table"
+        ]
+      },
+      {
+        "id": "c",
+        "kind": "cube",
+        "color": "blue",
+        "size": "big",
+        "pos": [
+          "table"
+        ]
+      },
+      {
+        "id": "d",
+        "kind": "pyramid",
+        "color": "blue",
+        "size": "big",
+        "pos": [
+          "on",
+          "c"
+        ]
+      },
+      {
+        "id": "e",
+        "kind": "ball",
+        "color": "yellow",
+        "size": "small",
+        "pos": [
+          "on",
+          "a"
+        ]
+      }
+    ],
+    "hand": null
+  }
+}
