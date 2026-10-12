@@ -198,4 +198,7 @@ class MyTestee(Testee):
 | `docs/env功能介绍.md` | 运行测试的人 | 公开 | 测试者提供什么、保证什么、不提供什么、**稳定性承诺**与边界 |
 | `docs/testee开发需求.md` | 编写被测者的人 | 公开 | **契约**：按消息顺序要做什么、自由度、接入骨架、自测与常见错误 |
 | `shrdlu.ini` | 使用者 | 公开 | 常设参数与默认值（带注释）；命令行只说这一次要什么 |
+| `LICENSE` | 使用者 | 公开 | **MIT 许可证**文本 |
 公开的六份（本文、`README-env.md`、`docs/设计协议.md`、`docs/env功能介绍.md`、`docs/testee开发需求.md` 与 `shrdlu.ini`）构成对外正式材料。
+
+本项目以 **MIT 许可证**发布，全文见 [`LICENSE`](LICENSE)。
